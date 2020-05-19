@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { getCookie, setCookie } from '../../services/service.cookie';
 
 class App extends React.Component{
   state = {
@@ -14,6 +15,7 @@ class App extends React.Component{
 
   handleClick=()=>{
     console.log( 'this.state.favoriteCookie:', this.state.favoriteCookie );
+    setCookie( 'favoriteCookie', this.state.favoriteCookie );
   }
 
   render() {
